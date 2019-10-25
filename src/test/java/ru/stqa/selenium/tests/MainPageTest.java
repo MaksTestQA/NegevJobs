@@ -13,7 +13,7 @@ public class MainPageTest extends TestBase {
 
   private MainPageHelper mainPage;
   private AuthorizationPageHelper authorizationPage;
-
+//comment
   @BeforeMethod
   public void initPageObjects() {
 
