@@ -16,7 +16,7 @@ public class LogLog4j {
 
         Log.info("****************************************************************************************");
 
-        Log.info("$$$$$$$$$$$$$$$$$$$$$                 " + sTestCaseName + "       $$$$$$$$$$$$$$$$$$$$$$$$$");
+        Log.info("$$$$$$$$$$$$$$$$$$$$$     " + sTestCaseName + " started"+ "       $$$$$$$$$$$$$$$$$$$$$$$$$");
 
         Log.info("****************************************************************************************");
 
@@ -28,7 +28,7 @@ public class LogLog4j {
 
     public static void endTestCase(String sTestCaseName) {
 
-        Log.info("XXXXXXXXXXXXXXXXXXXXXXX             " + "-E---N---D-" + "             XXXXXXXXXXXXXXXXXXXXXX");
+        Log.info("XXXXXXXXXXXXXXXXXXXXXXX       " + sTestCaseName + " finished" + "        XXXXXXXXXXXXXXXXXXXXXX");
 
         Log.info("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 

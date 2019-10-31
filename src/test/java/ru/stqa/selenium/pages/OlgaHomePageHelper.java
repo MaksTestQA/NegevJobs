@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Sample page
  */
-public class OlgaHomePageBaseHelper extends PageBase {
+public class OlgaHomePageHelper extends PageBase {
 
   @FindBy(xpath = "//a[@class='bold']")
   WebElement registrationLink;
@@ -51,38 +51,51 @@ public class OlgaHomePageBaseHelper extends PageBase {
   WebElement sendMeMailButton;
 
   @CacheLookup
-  public WebElement header;
+     public WebElement header;
 
-  public OlgaHomePageBaseHelper(WebDriver webDriver) {
+     public OlgaHomePageHelper(WebDriver webDriver) {
         super(webDriver);
     }
 
 
-  public void WaitUntilTitleIsLoaded() {
-    waitUntilElementVisible(homePageTitle, 30);
-  }
+    public void WaitUntilTitleIsLoaded() {
+        log.info("---Home page : WaitUntilTitleIsLoaded");
+        waitUntilElementVisible(homePageTitle, 30);
+     }
 
     public void clickRegistrationLink() {
-      registrationLink.click();
-  }
+        log.info("---Home page : clickRegistrationLink");
+        registrationLink.click();
+    }
 
 
 
-    public void hitechLinkClick(){hitechLink.click();}
+    public void hitechLinkClick(){
+        log.info("---Home page : hitechLinkClick");
+        hitechLink.click();
+     }
 
-    public void qaLinckClick() {qaLink.click();}
+    public void qaLinckClick() {
+        log.info("---Home page : qaLinckClick");
+        qaLink.click();
+     }
 
-    public void waitUntilListIsLoaded() {waitUntilAllElementsVisible(searchButton, 30); }
+    public void waitUntilListIsLoaded() {
+        log.info("---Home page : waitUntilListIsLoaded");
+        waitUntilAllElementsVisible(searchButton, 30);
+     }
 
 
     public void openAllAds() throws InterruptedException {
-      for (WebElement we: circleDownButtons){
-          we.click();
-          Thread.sleep(1000);
-      }
+        log.info("---Home page : open All Ads");
+          for (WebElement we: circleDownButtons){
+              we.click();
+              Thread.sleep(1000);
+          }
     }
 
     public int countFieldsInAds() {
+        log.info("---Home page : countFieldsInAds");
         int count = 0;
         if (textsLabel2.size() == circleDownButtons.size()) count++;
         if (textsLabel3.size() == circleDownButtons.size()) count++;
@@ -91,6 +104,7 @@ public class OlgaHomePageBaseHelper extends PageBase {
 
 
     public void clickOnSendMeMailButton() {
-      sendMeMailButton.click();
+        log.info("---Home page : clickOnSendMeMailButton");
+        sendMeMailButton.click();
     }
 }

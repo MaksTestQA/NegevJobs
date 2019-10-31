@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class OlgaRegistrationPageBaseHelper extends PageBase {
+public class OlgaRegistrationPageHelper extends PageBase {
     private static final String FIRSTNAME = "Olga";
     private static final String LASTNAME = "Tester";
     private static final String EMAIL = "olyatester@yandex.ru";
@@ -75,27 +75,32 @@ public class OlgaRegistrationPageBaseHelper extends PageBase {
     @FindBy(xpath = "//li[contains(text(),',')]")
     WebElement registrationWrongMessage;
 
-    public OlgaRegistrationPageBaseHelper(WebDriver webDriver) {
+    public OlgaRegistrationPageHelper(WebDriver webDriver) {
         super(webDriver);
     }
 
     public void waitUntilRegistrationPageIsLoaded() {
+        log.info("---Registration page : waitUntilRegistrationPageIsLoaded");
         waitUntilElementVisible(registrationTitle, 50);
     }
 
     public void isTitleRight() {
+        log.info("---Registration page : isTitleRight");
         Assert.assertEquals(registrationTitle.getText(), "הרשמה למערכת");
     }
 
     public void waitUntilPageWithQuestionIsLoaded() {
+        log.info("---Registration page : waitUntilPageWithQuestionIsLoaded");
         waitUntilElementVisible(questionTitle, 50);
     }
 
     public void clickSearchWorkButton() {
+        log.info("---Registration page : clickSearchWorkButton");
         searchWorkButton.click();
     }
 
     public void enterRegistrationData() throws InterruptedException {
+        log.info("---Registration page : enterRegistrationData");
         enterTextToField(firstNameField, FIRSTNAME);
         enterTextToField(lastNameField, LASTNAME);
         enterTextToField(emailField, EMAIL);
@@ -121,6 +126,7 @@ public class OlgaRegistrationPageBaseHelper extends PageBase {
     public void enterRegistrationData(
             String firstname, String lastname, String email, String password,
             String repassoword, String function, String mobile) throws InterruptedException {
+        log.info("---Registration page : enterRegistrationData");
         enterTextToField(firstNameField, firstname);
         enterTextToField(lastNameField, lastname);
         enterTextToField(emailField, email);
@@ -142,8 +148,11 @@ public class OlgaRegistrationPageBaseHelper extends PageBase {
     }
 
     public boolean isRegistrationRight() {
+        log.info("---Registration page : isRegistrationRight");
         return registrationThanksTitle.isDisplayed();
     }
 
-    public boolean isEmailWrongMessageDisplayed() { return registrationWrongMessage.isDisplayed(); }
+    public boolean isEmailWrongMessageDisplayed() {
+        log.info("---Registration page : isEmailWrongMessageDisplayed");
+        return registrationWrongMessage.isDisplayed(); }
 }
